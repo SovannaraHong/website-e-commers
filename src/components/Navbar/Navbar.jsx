@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logo/logos.png";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./Navbar.css";
 const Navbar = () => {
   const navLink = [
     { label: "home", path: "/" },
@@ -33,6 +35,10 @@ const Navbar = () => {
   const money = [{ Pon: "USA" }, { Pon: "KHMER" }];
   const product = [{ Pon: "KOREA" }, { Pon: "KHMER" }];
 
+  const [selecFlag, setSelectFlag] = useState(optionLanguege[0]);
+
+  const navigate = useNavigate();
+  const location = useLocation();
   return (
     <>
       <div className="bg-[#f5f5f5] font-popinse h-[140px] fixed top-0 left-0 right-0 shadow-lg z-[9999]">
@@ -42,9 +48,9 @@ const Navbar = () => {
 
             <div className="flex justify-center items-center">
               <div>
-                {/* <img className="w-[20px]" src={selecFlag.flag} alt="" /> */}
+                <img className="w-[20px]" src={selecFlag.flag} alt="" />
               </div>
-              {/* <div>
+              <div>
                 <select
                   name=""
                   id=""
@@ -69,7 +75,7 @@ const Navbar = () => {
                     <option key={ind}>{mo.Pon}</option>
                   ))}
                 </select>
-              </div> */}
+              </div>
             </div>
           </section>
           {/* center */}

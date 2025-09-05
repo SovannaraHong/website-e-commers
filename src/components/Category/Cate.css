@@ -1,0 +1,26 @@
+.scroll-container {
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+}
+
+.scroll-content {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 17s linear infinite;
+}
+
+.scroll-content img {
+  flex-shrink: 0;
+  width: 200px; /* keep consistent size */
+  margin: 0 30px;
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

@@ -1,5 +1,3 @@
-import React, { Component } from "react";
-import Navbar from "./components/Navbar/Navbar";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -9,9 +7,14 @@ import {
 
 // Component
 import { RootLayout } from "./layouts/index";
+import { Home, Blog, Category, Feature, Shop } from "./pages/LayoutPage";
 function App() {
   const router = createBrowserRouter(
-    createRoutesFromElements(<Route path="/" element={<RootLayout />} />)
+    createRoutesFromElements(
+      <Route path="/" element={<RootLayout />}>
+        <Route index element={<Home />} />
+      </Route>
+    )
   );
   return (
     <RouterProvider

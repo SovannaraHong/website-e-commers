@@ -50,7 +50,7 @@ const ProductDetail = () => {
           <div>
             <div className="flex  justify-start items-center gap-3">
               <p className="font-semibold font-popinse text-[12px]  text-pink-500 bg-pink-300 px-[10px] rounded-[5px]">
-                titl
+                {title}
               </p>
               <p className="text-[9px] text-orange-400">
                 <i className="fa-solid fa-star"></i>

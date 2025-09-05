@@ -1,16 +1,14 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo/logos.png";
+import logo from "../../assets/logo/PichPiseyLogo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import "./Navbar.css";
+
 const Navbar = () => {
   const navLink = [
     { label: "home", path: "/" },
     { label: "feature", path: "feature" },
-    { label: "Phka", path: "phka" },
-    { label: "shop", path: "shop" },
+    { label: "Category", path: "category" },
+    { label: "Shop", path: "shop" },
     { label: "Blog", path: "blog" },
-    { label: "Be Our Ambastadar", path: "Outlet" },
-    { label: "page", path: "page" },
   ];
   const contact = [
     {
@@ -82,9 +80,9 @@ const Navbar = () => {
           <div className=" flex justify-center items-center font-NT">
             <img
               onClick={() => navigate("/")}
-              className="w-[300px] pt-[20px]"
+              className="w-[300px] pt-[20px] object-cover h-fit"
               src={logo}
-              alt="logo"
+              alt=""
             />
           </div>
 
@@ -114,7 +112,6 @@ const Navbar = () => {
           <ul className="flex justify-center items-center  gap-15 cursor-pointer uppercase list-style font-semibold font-popinse text-[14px]">
             {navLink.map((nav, ind) => (
               <Link key={ind} to={nav.path}>
-                {" "}
                 <li
                   className={`cursor-pointer transition-all duration-300 ease-in-out 
     ${

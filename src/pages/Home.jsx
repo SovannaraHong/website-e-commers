@@ -1,12 +1,14 @@
 import React from "react";
 import Category from "../components/Category/Category";
+import HeroSection from "../components/Hero/HeroSection";
+import Product from "../components/Product/Product";
 
 const Home = () => {
   return (
     <>
-      <div className="pt-[300px]">
-        <Category />
-      </div>
+      <HeroSection />
+      <Category />
+      <Product />
     </>
   );
 };

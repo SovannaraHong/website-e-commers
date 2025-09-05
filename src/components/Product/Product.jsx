@@ -16,7 +16,7 @@ const Product = () => {
         <section className="flex justify-center items-center pt-[20px] ">
           <div className="grid grid-cols-4 gap-10">
             {categoryList.map((item) => (
-              <Link key={item.id}>
+              <Link key={item.id} to={item.id.toString()}>
                 <ProductCard key={item.id} {...item} />
               </Link>
             ))}

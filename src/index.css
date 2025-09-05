@@ -1,0 +1,31 @@
+@import "tailwindcss";
+@font-face {
+  font-family: "Poppins";
+  src: url("./assets/Fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Press Start 2P";
+  src: url("./assets/Fonts/PressStart2P-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("./assets/Fonts/Roboto-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+  font-family: "Kantumruy Pro";
+  src: url("./assets/Fonts/KantumruyPro-VariableFont_wght.ttf");
+}
+@font-face {
+  font-family: "NT Mikella";
+  src: url("./assets/Fonts/NT\ Mikella\ \(DEMO\).otf");
+}
+@theme {
+  --font-popinse: "Poppins", "Poppins", sans-serif;
+  --font-Style: "Press Start 2P", sans-serif;
+  --font-Roboto: "Roboto", sans-serif;
+  --font-Kantumruy: "Kantumruy Pro", sans-serif;
+  --font-NT: "NT Mikella", sans-serif;
+
+  --font-Bit: "Bitcount Single", sans-serif;
+}

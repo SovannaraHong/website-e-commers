@@ -1,7 +1,12 @@
 import React from "react";
+import Photo from "../components/PhotoGrid/Photo";
 
 const Category = () => {
-  return <div>Category</div>;
+  return (
+    <>
+      <Photo />
+    </>
+  );
 };
 
 export default Category;

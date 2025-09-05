@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/logos.png";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 const Navbar = () => {
   const navLink = [
@@ -80,7 +80,12 @@ const Navbar = () => {
           </section>
           {/* center */}
           <div className=" flex justify-center items-center font-NT">
-            <img className="w-[300px] pt-[20px]" src={logo} alt="" />
+            <img
+              onClick={() => navigate("/")}
+              className="w-[300px] pt-[20px]"
+              src={logo}
+              alt=""
+            />
           </div>
 
           {/* left  */}
@@ -108,17 +113,19 @@ const Navbar = () => {
         <main className="flex justify-center items-center pt-[101px] fixed top-0 left-0   right-0 z-[99]">
           <ul className="flex justify-center items-center  gap-15 cursor-pointer uppercase list-style font-semibold font-popinse text-[14px]">
             {navLink.map((nav, ind) => (
-              <li
-                key={ind}
-                className={`cursor-pointer transition-all duration-300 ease-in-out 
+              <Link key={ind} to={nav.path}>
+                {" "}
+                <li
+                  className={`cursor-pointer transition-all duration-300 ease-in-out 
     ${
       location.pathname === nav.path || location.pathname === `/${nav.path}`
         ? "text-[#fd84cf] style-list "
         : ""
     }`}
-              >
-                {nav.label}
-              </li>
+                >
+                  {nav.label}
+                </li>
+              </Link>
             ))}
           </ul>
         </main>

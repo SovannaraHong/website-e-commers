@@ -13,6 +13,10 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<Home />} />
+        <Route path="feature" element={<Feature />}></Route>
+        <Route path="phka" element={<Category />}></Route>
+        <Route path="shop" element={<Shop />}></Route>
+        <Route path="blog" element={<Blog />}></Route>
       </Route>
     )
   );

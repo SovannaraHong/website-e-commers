@@ -21,7 +21,7 @@ const ProductCard = ({ id, title, images, price }) => {
           <button className="bg-pink-300 uppercase cursor-pointer  gap-3 text-white flex justify-center items-center w-full font-semibold font-popinse py-[10px] px-[15px] ">
             {" "}
             <span>
-              <i class="fa-solid fa-bag-shopping"></i>
+              <i className="fa-solid fa-bag-shopping"></i>
             </span>
             <span> add to cast</span>
           </button>

@@ -21,7 +21,7 @@ const HeroSection = () => {
   }, []);
   return (
     <>
-      <div className="pt-[140px]">
+      <div className="pt-[140px] ">
         <main className="flex  justify-between items-center py-[10px] px-[20px] ">
           <section className="flex gap-4  justify-center items-center  p-[10px]">
             <div className="flex justify-center items-center flex-col gap-2">

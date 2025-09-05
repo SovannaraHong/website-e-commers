@@ -5,7 +5,7 @@ const ProductCard = ({ id, title, images, price }) => {
   return (
     <>
       <main>
-        <article className="w-[250px] rounded-[10px] shadow-lg cursor-pointer">
+        <article className="w-[250px] rounded-[10px] shadow-lg cursor-pointer ">
           <div>
             {" "}
             <img
@@ -18,13 +18,15 @@ const ProductCard = ({ id, title, images, price }) => {
             <p className="font-semibold text-[18px]">{title}</p>
             <p className="font-semibold text-pink-400">{price}</p>
           </div>
-          <button className="bg-pink-300 uppercase cursor-pointer  gap-3 text-white flex justify-center items-center w-full font-semibold font-popinse py-[10px] px-[15px] ">
-            {" "}
-            <span>
-              <i className="fa-solid fa-bag-shopping"></i>
-            </span>
-            <span> add to cast</span>
-          </button>
+          <div className="px-[20px] py-[10px] ">
+            <button className="bg-pink-300 rounded-[10px] uppercase cursor-pointer   gap-3 text-white flex justify-center items-center w-full font-semibold font-popinse py-[10px] px-[15px] ">
+              {" "}
+              <span>
+                <i className="fa-solid fa-bag-shopping"></i>
+              </span>
+              <span> add to cast</span>
+            </button>
+          </div>
         </article>
       </main>
     </>

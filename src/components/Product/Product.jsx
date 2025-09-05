@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Product = () => {
   return (
     <>
-      <main className="h-screen pt-[100px]">
+      <main className="h-auto pt-[100px] ">
         <div className="flex justify-center  items-center">
           <h1 className=" font-semibold border-b-3 border-pink-300 text-[26px] font-Kantumruy">
             ផលិតផលទាកទាញ

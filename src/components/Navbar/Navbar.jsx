@@ -93,10 +93,10 @@ const Navbar = () => {
                 type="text"
                 name=""
                 placeholder="Search..."
-                className="bg-[#f075aa] px-[5px] w-[140px]  cursor-pointer text-[15px] py-[5px] rounded-[5px]"
+                className="bg-[#ffc7df] px-[5px] w-[140px] placeholder-white  cursor-pointer text-[15px] py-[5px] rounded-[5px]"
                 id=""
               />
-              <i className="bx bx-search absolute right-[165px] top-[33px]"></i>
+              <i className="bx bx-search absolute text-white right-[165px] top-[33px]"></i>
             </div>
             <div className="flex justify-center items-center gap-2">
               {contact.map((ct, ind) => (

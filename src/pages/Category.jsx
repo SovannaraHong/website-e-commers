@@ -1,5 +1,11 @@
+import PhotoGrid from "../components/Category/PhotoGrid";
+
 const Category = () => {
-  return <></>;
+  return (
+    <>
+      <PhotoGrid />
+    </>
+  );
 };
 
 export default Category;

@@ -1,0 +1,15 @@
+export const categoryPhoto = [
+  "/Photos/1.jpg",
+  "/Photos/2.jpg",
+  "/Photos/3.jpg",
+  "/Photos/4.jpg",
+  "/Photos/5.jpg",
+  "/Photos/6.jpg",
+  "/Photos/7.jpg",
+  "/Photos/8.jpg",
+  "/Photos/9.jpg",
+  "/Photos/10.jpg",
+  "/Photos/11.jpg",
+  "/Photos/13.jpg",
+  "/Photos/14.jpg",
+];

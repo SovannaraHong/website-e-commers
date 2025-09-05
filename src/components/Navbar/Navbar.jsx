@@ -84,7 +84,7 @@ const Navbar = () => {
               onClick={() => navigate("/")}
               className="w-[300px] pt-[20px]"
               src={logo}
-              alt=""
+              alt="logo"
             />
           </div>
 

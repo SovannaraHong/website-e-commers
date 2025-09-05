@@ -15,26 +15,7 @@ import a13 from "../../assets/Photos/13.jpg";
 import a14 from "../../assets/Photos/14.jpg";
 import a15 from "../../assets/Photos/15.jpg";
 import a16 from "../../assets/Photos/16.jpg";
-const item = [
-  a1,
-  a2,
-  a3,
-  a4,
-  a5,
-  a6,
-  a7,
-  a8,
-  a9,
-  a10,
-  a11,
-  a12,
-  a13,
-  a14,
-  a15,
-  a16,
-  a1,
-  a1,
-];
+const item = [a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15];
 const Photo = () => {
   return (
     <>

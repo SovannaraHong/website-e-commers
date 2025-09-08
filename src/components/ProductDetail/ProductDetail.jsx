@@ -1,11 +1,17 @@
 import { useParams } from "react-router-dom";
 import Product from "../Product/Product";
 import { categoryList } from "../../data/data";
+import { useState } from "react";
+import Qr from "../../pages/Qr";
+import QrImg from "../../assets/logo/image.png";
 
+import "./Product.css";
 const ProductDetail = () => {
   const { id } = useParams();
   const product = categoryList.find((i) => i.id == id);
   const { images, title, productName, rating, price, discount } = product;
+  const [showQr, setShowQr] = useState(false);
+  const [count, setCount] = useState(0);
   return (
     <>
       <main className="px-[200px] pt-[180px]">
@@ -112,7 +118,7 @@ const ProductDetail = () => {
                       $4.00
                     </h3>
                   </div>
-                  <div>
+                  <div className="flex justify-center items-start flex-col gap-1">
                     <p className="text-[10px] bg-blue-300 px-[5px] py-[2px] text-white rounded-[4px]">
                       Rating 4.3
                     </p>
@@ -128,9 +134,14 @@ const ProductDetail = () => {
             <div className="py-[10px] flex items-center gap-4">
               <p className="font-Kantumruy text-[14px]">ចំនួនទំនិញ</p>
               <div className="flex items-center gap-2 border-1 px-[13px] justify-center py-[3px] rounded-[7px]">
-                <button>-</button>
-                <p>0</p>
-                <button>+</button>
+                <button
+                  className="font-semibold "
+                  onClick={() => setCount((prev) => (prev > 1 ? prev - 1 : 1))}
+                >
+                  -
+                </button>
+                <p>{count}</p>
+                <button onClick={() => setCount((prev) => prev + 1)}>+</button>
               </div>
             </div>
             <div className="py-[15px]">
@@ -139,19 +150,34 @@ const ProductDetail = () => {
             <hr className="border-b-1 border-gray-300" />
             <div className="py-[15px]">
               <p className="font-Kantumruy font-bold">សរុប</p>
-              <div className="flex flex-col gap-2 pt-[10px]">
-                <button className="bg-pink-500 py-[6px] text-[14px] gap-3  font-Kantumruy flex justify-center items-center text-white w-full rounded-[15px]">
+              <div className="flex flex-col gap-2 pt-[10px] ">
+                <button className="bg-pink-500 py-[6px] text-[14px] gap-3   cursor-pointer font-Kantumruy flex justify-center items-center text-white w-full rounded-[15px]">
                   <span>
                     <i className="fa-solid fa-gift"></i>
                   </span>{" "}
                   <span>ដាកទំនេញចូលក្នុងកន្រក់</span>
                 </button>
-                <button className="bg-white border-1 gap-3 text-[14px] font-Kantumruy border-pink-400 py-[6px]  flex justify-center items-center text-pink-300 w-full rounded-[15px]">
+                <button className="bg-white border-1 gap-3 text-[14px] cursor-pointer font-Kantumruy border-pink-400 py-[6px]  flex justify-center items-center text-pink-300 w-full rounded-[15px]">
                   <span>
                     <i className="fa-brands fa-cc-paypal"></i>
                   </span>{" "}
-                  <span>បង់ប្រាក់ឡូវ</span>
+                  <span onClick={() => setShowQr(true)}>បង់ប្រាក់ឡូវ</span>
                 </button>
+                {showQr && (
+                  <div className="fixed inset-0 flex justify-center items-center bg-black/50 z-50">
+                    <div
+                      onClick={() => setShowQr(false)}
+                      className="bg-white/30 backdrop-blur-md border border-white/20 py-[50px] px-[40px] rounded-[30px] flex justify-center items-center flex-col shadow-lg animate-scale-up"
+                    >
+                      <img className="w-[200px] pb-[29px]" src={QrImg} alt="" />
+                      <div className="bg-red-400 flex justify-center items-center px-[24px] text-white py-[10px] rounded-full">
+                        <h1 className="font-popinse text-[14px] font-semibold">
+                          Scan Now
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

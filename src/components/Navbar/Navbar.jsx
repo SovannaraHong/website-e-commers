@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/PichPiseyLogo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-
+import "./Navbar.css";
 const Navbar = () => {
   const navLink = [
     { label: "home", path: "/" },

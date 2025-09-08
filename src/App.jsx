@@ -5,7 +5,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-// Component
+// Components
 import { RootLayout } from "./layouts/index";
 import {
   HomePage,
@@ -15,26 +15,36 @@ import {
   ShopPage,
 } from "./pages/LayoutPage";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import { productLoader } from "./components/FeatureComponent/WrapperProduct";
+import FeatureDetail, {
+  LoaderProductDetail,
+} from "./components/ProductDetail/FeatureDetail";
+
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="feature" element={<FeaturePage />}></Route>
-        <Route path="category" element={<CategoryPage />}></Route>
-        <Route path="shop" element={<ShopPage />}></Route>
-        <Route path="blog" element={<BlogPage />}></Route>
+        <Route
+          path="feature"
+          element={<FeaturePage />}
+          loader={productLoader}
+        />
+        <Route
+          path="feature/:id"
+          element={<FeatureDetail />}
+          loader={LoaderProductDetail}
+        />
+        <Route path="category" element={<CategoryPage />} />
+        <Route path="shop" element={<ShopPage />} />
+        <Route path="blog" element={<BlogPage />} />
         <Route path=":id" element={<ProductDetail />} />
       </Route>
     )
   );
+
   return (
-    <RouterProvider
-      future={{
-        v7_startTransition: true,
-      }}
-      router={router}
-    />
+    <RouterProvider router={router} future={{ v7_startTransition: true }} />
   );
 }
 

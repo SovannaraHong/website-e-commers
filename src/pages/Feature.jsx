@@ -1,7 +1,12 @@
 import React from "react";
+import WrapperProduct from "../components/FeatureComponent/WrapperProduct";
 
 const Feature = () => {
-  return <div>Feature</div>;
+  return (
+    <>
+      <WrapperProduct />
+    </>
+  );
 };
 
 export default Feature;

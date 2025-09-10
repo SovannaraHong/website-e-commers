@@ -1,7 +1,12 @@
 import React from "react";
+import About from "../components/AboutComponent/About";
 
 const Blog = () => {
-  return <div>Blog</div>;
+  return (
+    <>
+      <About />
+    </>
+  );
 };
 
 export default Blog;

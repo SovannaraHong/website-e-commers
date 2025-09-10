@@ -1,11 +1,11 @@
 export const categoryList = [
   {
     id: 1,
-    title: "ផ្កា​ កុលាប",
+    title: "Phka Kolab",
     productName: "ផ្កា​ កុលាប",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579763785-Kolab.jpg&w=640&q=100",
+        img: "/product/p1.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1747972511341-1.jpg&w=640&q=100",
@@ -31,7 +31,7 @@ export const categoryList = [
     productName: "ផ្កា​ ឈូក",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579773026-Phka%2520Chouk.jpg&w=640&q=100",
+        img: "/product/p2.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1747972610672-1.jpg&w=640&q=100",
@@ -57,7 +57,7 @@ export const categoryList = [
     productName: "ផ្កា​ ផ្គរលាន់",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579781429-Phkorlorn.jpg&w=640&q=100",
+        img: "/product/p3.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579817735-Romdoul.jpg&w=384&q=100",
@@ -83,7 +83,7 @@ export const categoryList = [
     productName: "ផ្កា​ រំដួល",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579817735-Romdoul.jpg&w=640&q=100",
+        img: "/product/p4.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1747972666236-1.jpg&w=640&q=100",
@@ -109,7 +109,7 @@ export const categoryList = [
     productName: "ផ្កា​ នរគរាជ",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579790906-Phka%2520Nokoreach.jpg&w=640&q=100",
+        img: "/product/p5.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579790906-Phka%2520Nokoreach.jpg&w=384&q=100",
@@ -138,7 +138,7 @@ export const categoryList = [
     productName: "ផ្កា​ ទឹកដោះ",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579799489-Phka%2520Toek%2520dos.jpg&w=640&q=100",
+        img: "/product/p6.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579799489-Phka%2520Toek%2520dos.jpg&w=384&q=100",
@@ -167,7 +167,7 @@ export const categoryList = [
     productName: "អង្គារដី",
     images: [
       {
-        img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579807567-Phka%2520Angkea%2520Dey.jpg&w=640&q=100",
+        img: "/product/p7.png",
       },
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1748579807567-Phka%2520Angkea%2520Dey.jpg&w=384&q=100",
@@ -193,7 +193,7 @@ export const categoryList = [
   {
     id: 8,
     title: "Phka Angkea Dey",
-    productName: "អង្គារដី",
+    productName: "Armpit cream",
     images: [
       {
         img: "https://pichpisey.shop/_next/image?url=https%3A%2F%2Fpichpiseyshop.sgp1.digitaloceanspaces.com%2F1746377499639-1742614772374-1000022455.png&w=640&q=100",

@@ -13,7 +13,7 @@ const Product = () => {
             ផលិតផលទាកទាញ
           </h1>
         </div>
-        <section className="flex justify-center items-center pt-[20px] ">
+        <section className="flex justify-center items-center pt-[50px] ">
           <div className="grid grid-cols-4 gap-10">
             {categoryList.map((item) => (
               <Link key={item.id} to={item.id.toString()}>

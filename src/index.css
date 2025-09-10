@@ -29,3 +29,6 @@
 
   --font-Bit: "Bitcount Single", sans-serif;
 }
+body {
+  overflow-x: hidden;
+}

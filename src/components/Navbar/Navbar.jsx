@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo/PichPiseyLogo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Navbar.css";
@@ -37,6 +37,15 @@ const Navbar = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    const match = navLink.find((i) =>
+      i.path === "/"
+        ? location.pathname === "/"
+        : location.pathname === `/${i.path}`
+    );
+    document.title = match ? `Pich Pisey | ${match.label}` : "Homepage";
+  }, [location.pathname]);
   return (
     <>
       <div className="bg-[#f5f5f5] font-popinse h-[140px] fixed top-0 left-0 right-0 shadow-lg z-[9999]">

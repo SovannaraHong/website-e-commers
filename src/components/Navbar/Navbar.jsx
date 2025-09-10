@@ -7,7 +7,7 @@ const Navbar = () => {
     { label: "home", path: "/" },
     { label: "feature", path: "feature" },
     { label: "Category", path: "category" },
-    { label: "Shop", path: "shop" },
+    { label: "Member", path: "shop" },
     { label: "Contact", path: "blog" },
   ];
   const contact = [

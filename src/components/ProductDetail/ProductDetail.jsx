@@ -12,6 +12,7 @@ const ProductDetail = () => {
   const { images, title, productName, rating, price, discount } = product;
   const [showQr, setShowQr] = useState(false);
   const [count, setCount] = useState(0);
+  const [mainImg, setMainImg] = useState(images[1].img);
   return (
     <>
       <main className="px-[200px] pt-[180px]">
@@ -21,34 +22,23 @@ const ProductDetail = () => {
             <div className="w-[450px] h-[450px] border-1 border-gray-400 rounded-[15px] overflow-hidden">
               <img
                 className="w-full h-full object-cover"
-                src={images[1].img}
+                src={mainImg}
                 alt=""
               />
             </div>
 
             {/* Thumbnails */}
             <div className="flex items-center gap-4">
-              <div className="w-[130px] h-[120px] border">
-                <img
-                  className="w-full h-full object-cover"
-                  src={images[2].img}
-                  alt=""
-                />
-              </div>
-              <div className="w-[130px] h-[120px] border">
-                <img
-                  className="w-full h-full object-cover"
-                  src={images[3].img}
-                  alt=""
-                />
-              </div>
-              <div className="w-[130px] h-[120px] border">
-                <img
-                  className="w-full h-full object-cover"
-                  src={images[4].img}
-                  alt=""
-                />
-              </div>
+              {images.slice(2, 5).map((img) => (
+                <div className="w-[130px] h-[120px] border">
+                  <img
+                    onClick={() => setMainImg(img.img)}
+                    className="w-full h-full object-cover"
+                    src={img.img}
+                    alt=""
+                  />
+                </div>
+              ))}
             </div>
           </div>
 

@@ -8,14 +8,29 @@
 //     <App />
 //   </StrictMode>,
 // )
+// import React from "react";
+// import ReactDOM from "react-dom/client";
+// import App from "./App";
+// import "./index.css";
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(
+//   <React.StrictMode>
+//     <App />
+//   </React.StrictMode>
+// );
+// App.jsx or main.jsx
+// main.jsx
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import "./index.css";
+import { CartProvider } from "./context/CartContext";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
+    <CartProvider>
+      <App />
+    </CartProvider>
   </React.StrictMode>
 );

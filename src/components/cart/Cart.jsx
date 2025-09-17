@@ -1,111 +1,144 @@
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo/PichPiseyLogo.png";
-import { categoryList } from "../../data/data";
 
 const Cart = () => {
-  const { id } = useParams();
-  const addCart = categoryList.find((i) => i.id == id);
-  const { images, title, productName, rating, price, discount } = addCart;
-  return (
-    <div className="min-h-screen pt-[20px] text-black  font-popinse">
-      <div className=" bg-white rounded-lg p-10 my-20">
-        {/* Header */}
+  const [cartItems, setCartItems] = useState([]);
 
-        <header className="mb-10 ">
-          <div className="flex justify-center items-center">
-            <img className="w-[200px] " src={logo} alt="" />
-          </div>
+  useEffect(() => {
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(cart);
+  }, []);
+
+  const handleRemove = (id) => {
+    const updatedCart = cartItems.filter((item) => item.id !== id);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCartItems(updatedCart);
+  };
+
+  const handleQuantityChange = (id, delta) => {
+    const updatedCart = cartItems.map((item) => {
+      if (item.id === id) item.quantity = Math.max(1, item.quantity + delta);
+      return item;
+    });
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+    setCartItems(updatedCart);
+  };
+
+  const subtotal = cartItems.reduce(
+    (acc, item) => acc + item.price * item.quantity,
+    0
+  );
+  const finaldis = subtotal * 0.01; // 20% of subtotal
+
+  return (
+    <div className="min-h-screen pt-[20px] font-popinse">
+      <div className="bg-white rounded-lg p-10 my-20">
+        <header className="mb-10 text-center">
           <h1 className="text-4xl font-bold">Shopping Cart</h1>
         </header>
 
-        {/* Main content */}
         <main className="flex flex-col md:flex-row gap-10">
-          {/* Cart Table */}
           <section className="flex-1 border border-gray-300 rounded-xl p-6">
             <table className="w-full">
               <thead>
                 <tr className="border-b border-gray-300 text-gray-600 uppercase text-sm font-semibold">
-                  <th className="pb-4 text-left">Product Code</th>
+                  <th className="pb-4 text-left">Product</th>
                   <th className="pb-4 text-center">Quantity</th>
                   <th className="pb-4 text-right">Total</th>
                   <th className="pb-4 text-center">Action</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="border-b border-gray-200">
-                  <td className="py-4 flex items-center gap-4">
-                    <img
-                      src={images[0].img}
-                      className="w-16 h-16 rounded-lg object-cover"
-                    />
-                    <div>
-                      <p className="font-semibold">{productName}</p>
-                      <p className="text-gray-500 text-xs">
-                        Set : Colour:{title}
-                      </p>
-                    </div>
-                  </td>
+                {cartItems.map((item) => (
+                  <tr key={item.id} className="border-b border-gray-200">
+                    <td className="py-4 flex items-center gap-4">
+                      <img
+                        src={item.images[0].img}
+                        className="w-16 h-16 rounded-lg object-cover"
+                        alt={item.productName}
+                      />
 
-                  <td className="py-4 text-center">
-                    <div className="inline-flex items-center border border-gray-300 rounded-full overflow-hidden">
-                      <button className="px-3 py-1 text-lg hover:bg-gray-100 transition">
-                        −
+                      <div>
+                        <p className="font-semibold">{item.productName}</p>
+                        <div>
+                          <p className="font-semibold">{item.name}</p>
+                          <p className="text-gray-500 text-xs">
+                            Set : product: {item.productName}
+                          </p>
+                        </div>
+                      </div>
+                    </td>
+
+                    <td className="py-4 text-center">
+                      <div className="inline-flex items-center border border-gray-300 rounded-full overflow-hidden">
+                        <button
+                          className="px-3 py-1 text-lg hover:bg-gray-100"
+                          onClick={() => handleQuantityChange(item.id, -1)}
+                        >
+                          −
+                        </button>
+                        <div className="px-4 font-semibold">
+                          {item.quantity}
+                        </div>
+                        <button
+                          className="px-3 py-1 text-lg hover:bg-gray-100"
+                          onClick={() => handleQuantityChange(item.id, 1)}
+                        >
+                          +
+                        </button>
+                      </div>
+                    </td>
+
+                    <td className="py-4 text-right font-semibold">
+                      ${item.price * item.quantity}
+                    </td>
+
+                    <td className="py-4 text-center">
+                      <button
+                        onClick={() => handleRemove(item.id)}
+                        className="text-gray-600 hover:text-red-600 text-xl"
+                      >
+                        🗑️
                       </button>
-                      <div className="px-4 font-semibold">1</div>
-                      <button className="px-3 py-1 text-lg hover:bg-gray-100 transition">
-                        +
-                      </button>
-                    </div>
-                  </td>
-
-                  <td className="py-4 text-right font-semibold">${price}</td>
-
-                  <td className="py-4 text-center">
-                    <button
-                      className="text-gray-600 hover:text-red-600 transition text-xl"
-                      aria-label="Remove item"
-                    >
-                      🗑️
-                    </button>
-                  </td>
-                </tr>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
-
-            <button className="mt-8 bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-900 transition">
-              Update Cart
-            </button>
           </section>
 
-          {/* Order Summary */}
           <aside className="w-full md:w-96 border border-gray-300 rounded-xl p-6 flex flex-col gap-4">
-            <input
-              type="text"
-              placeholder="Discount voucher"
-              className="border border-gray-400 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
-            />
-            <button className="self-end px-6 py-2 bg-gray-100 rounded-full font-semibold hover:bg-gray-200 transition">
-              Apply
-            </button>
+            <img className="w-[140px]" src={logo} alt="" />
+            <div className="flex justify-between">
+              <input
+                type="text"
+                placeholder="Discount voucher"
+                className="border border-gray-400 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+              />
+              <button className="self-end px-6 py-2 bg-gray-100 rounded-full font-semibold hover:bg-gray-200 transition">
+                Apply
+              </button>
+            </div>
 
             <div className="flex flex-col gap-3 text-sm font-semibold text-gray-700 mt-6">
               <div className="flex justify-between">
-                <span>{price}</span>
-                <span>subtotla USD</span>
+                <span>Sub Total</span>
+                <span>${subtotal.toFixed(3)} USD</span>
               </div>
               <div className="flex justify-between">
-                <span>{discount} (10%)</span>
-                <span className="text-red-600">-${discount} USD</span>
+                <span>Discount (10%)</span>
+                {/* <span className="text-red-600">${subtotal.toFixed(3)} USD</span> */}
+                <span className="text-red-600">${finaldis.toFixed(2)} USD</span>
               </div>
               <div className="flex justify-between">
                 <span>Delivery fee</span>
-                <span>${rating} USD</span>
+                {/* <span>${deliveryFee.toFixed(2)} USD</span> */}
               </div>
             </div>
 
             <div className="border-t border-gray-300 mt-4 pt-4 flex justify-between font-bold text-lg">
               <span>Total</span>
-              <span>$total USD</span>
+              <span>${subtotal.toFixed(2)} USD</span>
             </div>
 
             <p className="text-xs text-gray-500 mt-2">
@@ -120,9 +153,7 @@ const Cart = () => {
             </button>
           </aside>
         </main>
-
-        {/* Footer */}
-        <footer className="mt-20 border-t border-gray-300 pt-12 flex flex-col md:flex-row justify-between items-center">
+        <footer className="mt-2 border-t border-gray-300 pt-12 flex flex-col md:flex-row justify-between items-center">
           <div className="text-4xl font-bold">Craft Own Furniture</div>
           <button className="bg-black text-white px-6 py-2 rounded-full hover:bg-gray-900 transition mt-4 md:mt-0">
             Lets Talk!

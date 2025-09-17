@@ -21,7 +21,7 @@ const CategoryFootag = () => {
   return (
     <>
       <>
-        <main className="flex justify-center items-center pt-[20px]  overflow-hidden">
+        <main className="flex justify-center imageReveal items-center pt-[20px]  overflow-hidden">
           <div className="scroll-container">
             <div className="scroll-content">
               {/* First set */}

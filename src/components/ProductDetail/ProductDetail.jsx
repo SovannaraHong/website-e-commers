@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import Product from "../Product/Product";
 import { categoryList } from "../../data/data";
-import { useState } from "react";
-import Qr from "../../pages/Qr";
+import { CartContext } from "../../context/CartContext";
+import { useState, useContext } from "react";
+
 import QrImg from "../../assets/logo/image.png";
 
 import "./Product.css";
 const ProductDetail = () => {
+  const { handleAddToCart } = useContext(CartContext);
   const { id } = useParams();
   const product = categoryList.find((i) => i.id == id);
   const { images, title, productName, rating, price, discount } = product;
@@ -141,7 +143,10 @@ const ProductDetail = () => {
             <div className="py-[15px]">
               <p className="font-Kantumruy font-bold">សរុប</p>
               <div className="flex flex-col gap-2 pt-[10px] ">
-                <button className="bg-pink-500 py-[6px] text-[14px] gap-3   cursor-pointer font-Kantumruy flex justify-center items-center text-white w-full rounded-[15px]">
+                <button
+                  onClick={() => handleAddToCart(product)}
+                  className="bg-pink-500 py-[6px] text-[14px] gap-3   cursor-pointer font-Kantumruy flex justify-center items-center text-white w-full rounded-[15px]"
+                >
                   <span>
                     <i className="fa-solid fa-gift"></i>
                   </span>{" "}

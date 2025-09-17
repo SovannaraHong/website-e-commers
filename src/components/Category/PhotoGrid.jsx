@@ -12,7 +12,11 @@ const PhotoGrid = () => {
               className=" break-inside-avoid overflow-hidden mb-4 shadow rounded-lg"
               key={ind}
             >
-              <img className="w-full h-auto object-cover" src={item} alt="" />
+              <img
+                className="w-full blocks  h-auto object-cover"
+                src={item}
+                alt=""
+              />
             </div>
           ))}
         </div>

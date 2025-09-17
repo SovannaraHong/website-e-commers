@@ -53,7 +53,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext"; // Adjust path as needed
-
+import "./product.css";
 const ProductCard = ({ id, productName, images, price }) => {
   const [mainImg, setMainimg] = useState(images[0].img);
   const { handleAddToCart } = useContext(CartContext);
@@ -63,7 +63,7 @@ const ProductCard = ({ id, productName, images, price }) => {
   };
 
   return (
-    <article className="w-[250px] rounded-[10px] shadow-lg cursor-pointer hover:scale-[1.05] transition-all duration-300">
+    <article className="w-[250px] blocks rounded-[10px] shadow-lg cursor-pointer hover:scale-[1.05] transition-all duration-300">
       <div>
         <Link to={id.toString()}>
           <img

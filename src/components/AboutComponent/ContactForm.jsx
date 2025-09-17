@@ -46,7 +46,7 @@ const ContactForm = () => {
               convenience, and affordability.
             </p>
           </div>
-          <div className="flex flex-col gap-3 pt-[40px]">
+          <div className="flex flex-col gap-3 pt-[40px] font-popinse">
             {contact.map((p) => {
               return (
                 <div key={p.title} className="text-pink-400">

@@ -106,7 +106,7 @@ const About = () => {
                   focus on customer satisfaction,
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-[8px] pt-[80px]">
+              <div className="grid grid-cols-2 gap-[8px] pt-[80px] font-popinse">
                 {productDetail.map((item) => (
                   <>
                     <div className="text-pink-400 flex justify-start items-center gap-2">

@@ -15,30 +15,20 @@ import {
   ShopPage,
 } from "./pages/LayoutPage";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
-import { productLoader } from "./components/FeatureComponent/WrapperProduct";
-import FeatureDetail, {
-  LoaderProductDetail,
-} from "./components/ProductDetail/FeatureDetail";
+import NotFound from "./pages/NotFound";
+import Cart from "./components/cart/Cart";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<RootLayout />}>
+      <Route path="/" element={<RootLayout />} errorElement={<NotFound />}>
         <Route index element={<HomePage />} />
-        <Route
-          path="feature"
-          element={<FeaturePage />}
-          loader={productLoader}
-        />
-        <Route
-          path="feature/:id"
-          element={<FeatureDetail />}
-          loader={LoaderProductDetail}
-        />
+
         <Route path="category" element={<CategoryPage />} />
         <Route path="shop" element={<ShopPage />} />
         <Route path="blog" element={<BlogPage />} />
         <Route path=":id" element={<ProductDetail />} />
+        <Route path="cart/:id" element={<Cart />} />
       </Route>
     )
   );

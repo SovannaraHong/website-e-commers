@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import logo from "../../assets/logo/PichPiseyLogo.png";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Cart from "../cart/Cart";
 import "./Navbar.css";
 const Navbar = () => {
   const navLink = [
     { label: "home", path: "/" },
-    { label: "feature", path: "feature" },
+
     { label: "Category", path: "category" },
     { label: "Member", path: "shop" },
     { label: "Contact", path: "blog" },
@@ -13,6 +14,7 @@ const Navbar = () => {
   const contact = [
     {
       icon: <i className="bx bx-user-circle"></i>,
+      path: "/Cart",
     },
 
     {
@@ -107,12 +109,13 @@ const Navbar = () => {
               />
               <i className="bx bx-search absolute text-white right-[165px] top-[33px]"></i>
             </div>
-            <div className="flex justify-center items-center gap-2">
-              {contact.map((ct, ind) => (
-                <span className="text-[25px]" key={ind}>
-                  {ct.icon}
-                </span>
-              ))}
+            <div className="flex justify-center items-center gap-2 cursor-pointer">
+              <span className="text-[25px]">
+                <i className="bx bx-user-circle"></i>
+              </span>
+              <span className="text-[25px]" onClick={() => navigate("cart")}>
+                <i className="bx bx-shopping-bag"></i>
+              </span>
             </div>
           </section>
         </nav>

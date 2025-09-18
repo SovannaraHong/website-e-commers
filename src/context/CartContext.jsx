@@ -15,7 +15,6 @@ export const CartProvider = ({ children }) => {
     }
   });
 
-  // --- Sync cart with localStorage ---
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);

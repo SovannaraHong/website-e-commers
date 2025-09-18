@@ -41,7 +41,6 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  // --- Remove product completely ---
   const handleRemoveFromCart = (id) => {
     setCartItems((prevCart) => prevCart.filter((item) => item.id !== id));
     toast.info("Item removed from cart 🗑️", {

@@ -20,7 +20,6 @@ export const CartProvider = ({ children }) => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  // --- Add product to cart ---
   const handleAddToCart = (product) => {
     setCartItems((prevCart) => {
       const existing = prevCart.find((item) => item.id === product.id);

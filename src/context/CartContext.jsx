@@ -35,7 +35,6 @@ export const CartProvider = ({ children }) => {
       }
     });
 
-    // Stylish toast message
     toast.success(`${product.productName} added to cart! 🎉`, {
       position: "top-right",
       autoClose: 2000,
